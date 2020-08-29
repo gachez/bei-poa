@@ -63,7 +63,7 @@ const sources = [
 ];
 
 
-export default function PriceRange() {
+export default function SelectedProducts() {
 
 return (
 <div style={{
@@ -81,11 +81,22 @@ return (
   margin: '10px'
 }} />    
 
-<h4 style={{
-    marginTop: '7.5%',
-    marginLeft: '7vw',
-    color: '#8e95a5'
-}}>What's your budget?</h4>
+<div style={{ marginLeft: '7vw',marginTop: '7.5%', display: 'flex', position: 'relative' }}>
+    <h4 style={{
+        color: '#8e95a5'
+    }}><b style={{ color: '#00acc1'}}>Price range selected: <br /><br /></b> KSH 20,000 - 80,000</h4>
+    <Link style={{
+        position: 'absolute',
+        bottom: '10px',
+        left: '15rem',
+        fontWeight: 'bold',
+        height: 'auto',
+        borderRadius: '8px',
+        color: 'aliceblue',
+        textAlign: 'center'
+    }} to={"/PriceRange"}>Change range?</Link>
+
+</div>
    
 <div style={{
       display: 'flex',
@@ -97,7 +108,7 @@ return (
       {
         cards.map( card => {
           return (
-            <Link to={"/SelectedProducts"} style={{ textDecoration: 'none' }}>
+            <Link to={"/"} style={{ textDecoration: 'none' }}>
               <Card key={card.title} style={{ width: '18rem', margin: '2rem', borderRadius: '8px'}}>
                 <Card.Img onMouseOver = {() => console.log('hov')} src={card.img} style={{ width: '50%', height: '50%', objectFit: 'contain', padding: '10px', marginTop: '1rem', textAlign: 'center'}} />
                 <Card.Body style={{  borderRadius: '8px' }}>

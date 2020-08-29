@@ -17,22 +17,22 @@ import '../styles/style.css';
 const cards = [
   {
     color: 'green',
-    title: 'Television',
+    title: 'Televisions',
     img: Background
   },
   {
     color: 'red',
-    title: 'Smart Phone',
+    title: 'Smart Phones',
     img: SmartPhone
   },
   {
     color: 'blue',
-    title: 'Fridge',
+    title: 'Fridges',
     img: Fridge
   },
   {
     color: 'yellow',
-    title: 'Sofa',
+    title: 'Sofas',
     img: Sofa
   }
 ];
@@ -73,11 +73,11 @@ return (
   top: '2%',
   margin: '10px'
 }} />  
-<h2 style={{
+<h1 style={{
     marginTop: '10%',
     marginLeft: '7vw',
     color: '#00acc1'
-}}>Welcome to Bei Poa</h2><br />
+}}>Welcome Friend!</h1><br />
 
 <h4 style={{
     marginTop: '.5%',
@@ -113,7 +113,7 @@ return (
       justifyContent: 'center',
       alignContent: 'center',
       alignItems: 'center',
-      marginTop: '1rem',
+      marginTop: '2rem',
       display: 'flex',
       flexDirection:'row',
       flexWrap: 'wrap'
