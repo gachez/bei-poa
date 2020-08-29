@@ -18,28 +18,11 @@ import Generous from '../img/generous.png';
 
 const cards = [
   {
-    color: 'green',
-    title: 'Affordable',
-    range: '0 - 20,000',
-    img: Affordable
-  },
-  {
-    color: 'red',
-    title: 'Conservative',
-    range: '20,000 - 80,000',
-    img: Conservative
-  },
-  {
-    color: 'blue',
-    title: 'Generous',
-    range: '80,000 - 250,000',
-    img: Money
-  },
-  {
-    color: 'yellow',
-    title: 'Extravagant',
-    range: '250,000+',
-    img: Generous
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
   }
 ];
 
@@ -110,11 +93,11 @@ return (
           return (
             <Link to={"/"} style={{ textDecoration: 'none' }}>
               <Card key={card.title} style={{ width: '18rem', margin: '2rem', borderRadius: '8px'}}>
-                <Card.Img onMouseOver = {() => console.log('hov')} src={card.img} style={{ width: '50%', height: '50%', objectFit: 'contain', padding: '10px', marginTop: '1rem', textAlign: 'center'}} />
+                <Card.Img onMouseOver = {() => console.log('hov')} src={card.img} style={{ width: '100%', height: '50%', objectFit: 'contain', padding: '10px', marginTop: '1rem', textAlign: 'center'}} />
                 <Card.Body style={{  borderRadius: '8px' }}>
                 <Card.Title style={{ color: '#000', fontSize: '1.5rem'}}>{card.title}</Card.Title>
-                <Card.Text style={{ fontWeight: 'bold', fontSize: '1.25rem'}} >KSH {card.range}</Card.Text>
-              
+                <Card.Text style={{ fontWeight: 'bold', fontSize: '1.25rem'}} >{card.price}</Card.Text>
+                <Card.Img src={card.logo} style={{ width: '80px', height: '80px', borderRadius: '50%' }} />
                 </Card.Body>
               </Card>
             </Link>

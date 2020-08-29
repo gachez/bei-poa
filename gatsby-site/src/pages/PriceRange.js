@@ -82,7 +82,7 @@ return (
 }} />    
 
 <h4 style={{
-    marginTop: '7.5%',
+    marginTop: '10%',
     marginLeft: '7vw',
     color: '#8e95a5'
 }}>What's your budget?</h4>
