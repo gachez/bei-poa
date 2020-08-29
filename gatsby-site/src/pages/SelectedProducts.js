@@ -23,7 +23,56 @@ const cards = [
     img: Background,
     logo: Jumia,
     linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
+  },
+  {
+    title: 'HUAWEI Smartphone with 1tb storage!',
+    price: 'KSH 20,000',
+    img: Background,
+    logo: Jumia,
+    linkToShop: '#'
   }
+
 ];
 
 const sources = [
@@ -52,8 +101,12 @@ return (
 <div style={{
     backgroundColor: '#1e2129',
     position: 'fixed',
-    height: '100%',
-    width: '100%'
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    overflow: 'auto',
+    boxSizing: 'border-box'
 }}>
 <Image src={Logo} style={{
   position: 'absolute',
@@ -66,12 +119,13 @@ return (
 
 <div style={{ marginLeft: '7vw',marginTop: '7.5%', display: 'flex', position: 'relative' }}>
     <h4 style={{
-        color: '#8e95a5'
+        color: 'green',
+        fontSize: '28px'
     }}><b style={{ color: '#00acc1'}}>Price range selected: <br /><br /></b> KSH 20,000 - 80,000</h4>
     <Link style={{
         position: 'absolute',
         bottom: '10px',
-        left: '15rem',
+        left: '18rem',
         fontWeight: 'bold',
         height: 'auto',
         borderRadius: '8px',
@@ -98,6 +152,8 @@ return (
                 <Card.Title style={{ color: '#000', fontSize: '1.5rem'}}>{card.title}</Card.Title>
                 <Card.Text style={{ fontWeight: 'bold', fontSize: '1.25rem'}} >{card.price}</Card.Text>
                 <Card.Img src={card.logo} style={{ width: '80px', height: '80px', borderRadius: '50%' }} />
+                <br />
+                <Button variant="danger">Buy Now</Button>
                 </Card.Body>
               </Card>
             </Link>
