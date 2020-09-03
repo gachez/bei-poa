@@ -33,14 +33,6 @@ const sources = [
     companyLogo: Jumia
   },
   {
-    companyTitle: 'Masoko',
-    companyLogo: Masoko
-  },
-  {
-    companyTitle: 'Jiji',
-    companyLogo: Jiji
-  },
-  {
     companyTitle: 'Kilimall',
     companyLogo: Kilimall
   }
@@ -124,7 +116,7 @@ return (
         {
             sources.map(source => {
             return(
-                <Image style={{ width: '80px', height: '80px', borderRadius: '50%', margin: '1rem' }} src={source.companyLogo} />
+                <Image style={{  backgroundColor: 'white', width: '80px', height: '80px', borderRadius: '50%', margin: '1rem' }} src={source.companyLogo} />
             )
             })
         }

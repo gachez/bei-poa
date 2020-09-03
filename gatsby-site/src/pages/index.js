@@ -43,14 +43,6 @@ const sources = [
     companyLogo: Jumia
   },
   {
-    companyTitle: 'Masoko',
-    companyLogo: Masoko
-  },
-  {
-    companyTitle: 'Jiji',
-    companyLogo: Jiji
-  },
-  {
     companyTitle: 'Kilimall',
     companyLogo: Kilimall
   }
@@ -87,7 +79,7 @@ return (
     marginTop: '.5%',
     marginLeft: '7vw',
     color: '#8e95a5'
-}}>What do you want to buy?🛍️</h4>
+}}>What do you want to buy?<span>🛍️</span></h4>
    
 <div style={{
       display: 'flex',
@@ -125,7 +117,8 @@ return (
       {
         sources.map(source => {
           return(
-            <Image style={{ width: '80px', height: '80px', borderRadius: '50%', margin: '1rem' }} src={source.companyLogo} />
+
+            <Image style={{ backgroundColor: 'white',width: '80px', height: '80px', borderRadius: '50%', margin: '1rem' }} src={source.companyLogo} />
           )
         })
       }
