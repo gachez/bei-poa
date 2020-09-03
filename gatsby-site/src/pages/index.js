@@ -30,7 +30,7 @@ const cards = [
   },
   {
     color: 'yellow',
-    title: 'Printers',
+    title: 'Printer',
     img: Printer
   }
 ];

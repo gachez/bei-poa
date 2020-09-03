@@ -30,21 +30,33 @@ app.post('/getProducts', async (req,res) => {
                 break;
     
             case 'smart phones':
-                let range = req.body.range.split('-');
-                let jumiaProducts = await priceComparisonEngine(range, scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/'));
-                let kilimallProducts = await priceComparisonEngine(range, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1255&aside=smart%20tv&gc_id=1255'));
+                let rangeP = req.body.range.split('-');
+                let jumiaPhones = await priceComparisonEngine(rangeP, scrapeProductsJumia('https://www.jumia.co.ke/smartphones/'));
+                let kilimallPhones = await priceComparisonEngine(rangeP, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1074&aside=null&gc_id=1074'));
     
-                let phoneProducts = [...jumiaProducts, ...kilimallProducts];
+                let phoneProducts = [...jumiaPhones, ...kilimallPhones];
                 
                 res.send(phoneProducts);
                 break;
                 
-            case 'fridge':
-                console.log('fridges');
+            case 'home theatre':
+                let rangeT = req.body.range.split('-');
+                let jumiaTheatre = await priceComparisonEngine(rangeT, scrapeProductsJumia('https://www.jumia.co.ke/home-theatre/'));
+                let kilimallTheatre = await priceComparisonEngine(rangeT, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1256&aside=null&gc_id=1256'));
+    
+                let theatreProducts = [...jumiaTheatre, ...kilimallTheatre];
+                
+                res.send(theatreProducts);
                 break;
                 
-            case 'sofas':
-                console.log('sofas');
+            case 'printer':
+                let rangePr = req.body.range.split('-');
+                let jumiaPrinter = await priceComparisonEngine(rangePr, scrapeProductsJumia('https://www.jumia.co.ke/printers/'));
+                let kilimallPrinter = await priceComparisonEngine(rangePr, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?q=printers'));
+    
+                let printerProducts = [...jumiaPrinter, ...kilimallPrinter];
+                
+                res.send(printerProducts);
                 break;    
         }
     } catch(err) { console.log(err)}
