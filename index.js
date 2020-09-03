@@ -17,29 +17,38 @@ app.get('/', (req,res) => {
 });
 
 app.post('/getProducts', async (req,res) => {
-    switch(req.body.category){
-        case 'televisons':
-            let range = req.body.range.split('-');
-            let jumiaProducts = await priceComparisonEngine(range, scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/'));
-            let kilimallProducts = await priceComparisonEngine(range, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1255&aside=smart%20tv&gc_id=1255'));
+    try{
+        switch(req.body.category){
+            case 'televisons':
+                let range = req.body.range.split('-');
+                let jumiaProducts = await priceComparisonEngine(range, scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/'));
+                let kilimallProducts = await priceComparisonEngine(range, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1255&aside=smart%20tv&gc_id=1255'));
+    
+                let televisionProducts = [...jumiaProducts, ...kilimallProducts];
+                
+                res.send(televisionProducts);
+                break;
+    
+            case 'smart phones':
+                let range = req.body.range.split('-');
+                let jumiaProducts = await priceComparisonEngine(range, scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/'));
+                let kilimallProducts = await priceComparisonEngine(range, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1255&aside=smart%20tv&gc_id=1255'));
+    
+                let phoneProducts = [...jumiaProducts, ...kilimallProducts];
+                
+                res.send(phoneProducts);
+                break;
+                
+            case 'fridge':
+                console.log('fridges');
+                break;
+                
+            case 'sofas':
+                console.log('sofas');
+                break;    
+        }
+    } catch(err) { console.log(err)}
 
-            let televisionProducts = [...jumiaProducts, ...kilimallProducts];
-            
-            res.send(televisionProducts);
-            break;
-
-        case 'smart phones':
-            console.log('smart phones');
-            break;
-            
-        case 'fridge':
-            console.log('fridges');
-            break;
-            
-        case 'sofas':
-            console.log('sofas');
-            break;    
-    }
 });
 
  //scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/');
