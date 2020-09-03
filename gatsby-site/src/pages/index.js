@@ -4,13 +4,11 @@ import {Card, Button, Image} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Background from '../img/tv.jpg';
 import SmartPhone from '../img/phone.jpg';
-import Fridge from '../img/fridge.jpg'; 
-import Sofa from '../img/sofa.jpg';
 import Logo from '../img/logo.png';
 import Jumia from '../img/jumia.png';
-import Jiji from '../img/jiji.jpg';
 import Kilimall from '../img/kilimall.png';
-import Masoko from '../img/masoko.jpg';
+import Theatre from '../img/theatre.jpg';
+import Printer from '../img/printers.jpg';
 import '../styles/style.css';
 
 
@@ -27,13 +25,13 @@ const cards = [
   },
   {
     color: 'blue',
-    title: 'Fridges',
-    img: Fridge
+    title: 'Home theatre',
+    img: Theatre
   },
   {
     color: 'yellow',
-    title: 'Sofas',
-    img: Sofa
+    title: 'Printers',
+    img: Printer
   }
 ];
 
@@ -94,11 +92,11 @@ return (
             <Card key={card.title} style={{ width: '18rem', margin: '2rem', borderRadius: '8px'}}>
               <Link to="/PriceRange">
                 <Card.Img src={card.img} style={{ height: '250px'}} />
-                </Link> 
               <Card.Body style={{  borderRadius: '8px' }}>
               <Card.Title style={{ color: '#000'}}>{card.title}</Card.Title>
-            
+               
               </Card.Body>
+            </Link>
             </Card>
           )
         })
