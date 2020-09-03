@@ -49,7 +49,7 @@ app.post('/getProducts', async (req,res) => {
 //scrapeProductsMasoko('https://www.masoko.com/all-categories/phones-tablets/mobile-phones')
 
 //priceComparisonEngine(range, scrapeProductsKilimall('https://www.kilimall.co.ke/new/commoditysearch?c=1074&aside=null&gc_id=1074'));
-let port = 3300 || process.env.PORT;
+let port = process.env.PORT || 3300;
 
 app.listen(port, () => {
     console.log(`App is listening on port ${port}`);
