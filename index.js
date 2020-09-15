@@ -16,7 +16,7 @@ app.get('/', (req,res) => {
     res.send('Hello world! This is Bei Poa');
 });
 
-app.post('/getProducts', async (req,res) => {
+const determineProducts = async (req, res) => {
     try{
         switch(req.body.category){
             case 'televisons':
@@ -61,7 +61,9 @@ app.post('/getProducts', async (req,res) => {
         }
     } catch(err) { console.log(err)}
 
-});
+}
+
+app.post('/getProducts', determineProducts(req,res) );
 
  //scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/');
 
