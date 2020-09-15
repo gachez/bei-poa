@@ -63,7 +63,9 @@ const determineProducts = async (req, res) => {
 
 }
 
-app.post('/getProducts', determineProducts(req,res) );
+app.post('/getProducts', async (req,res) => {
+    determineProducts(req,res)
+} );
 
  //scrapeProductsJumia('https://www.jumia.co.ke/mlp-smart-tvs/');
 
